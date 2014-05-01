@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "user/newuser"
   get "user/signin"
   post 'user/loggedin'
+  get 'user/signout'
   
 
 

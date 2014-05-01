@@ -27,6 +27,13 @@
   </div><!-- /.navbar-collapse -->
 </nav><br><br><br><br><br><br>
 
+
+				<h4 align="center">
+					<% if flash[:notice] %>
+  						<%= h flash[:notice] %>
+					<% end %>
+				</h4>
+
 <div class="container">
 <div class="well">
 	<div class="row">
@@ -43,11 +50,7 @@
 				<h4>If you are not a member yet please become a member <a href="/user/new_user">here</a> to Sign In</h4>
 			</legend>
 					
-				<h4>
-					<% if flash[:notice] %>
-  						<%= h flash[:notice] %>
-					<% end %>
-				</h4>
+				
 
 				<div class="control-group email optional user_email form-group">
 
