@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get "user/signin"
   post 'user/loggedin'
   get 'user/signout'
-  
+  get 'user/contact'
+  get 'user/current_Users'
+  get 'user/user_Roles'
+  get 'user/gadget_Inventory'
 
 
  # post 'user_login_form'

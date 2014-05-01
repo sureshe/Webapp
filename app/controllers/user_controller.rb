@@ -22,15 +22,11 @@ class UserController < ApplicationController
 		end
 	end
 
-
 	def new_user
-		
 		
 	end
 
-	
 	def loggedin
-
 		@r_email = params[:user][:email]
 		@r_password = params[:user][:password]
 
@@ -40,8 +36,6 @@ class UserController < ApplicationController
 		if @c_email.nil? or @c_password.nil?
 			flash[:notice] = "Entered Email-Id/Password is Invalid"
 			redirect_to :action => 'signin'
-			
-		
 		else
 			#redirect_to :action => 'loggedin'
 			flash[:notice] = "Hi, You Are LoggedIn Successfully......!"
@@ -52,5 +46,21 @@ class UserController < ApplicationController
 	def signout
 			flash[:notice] = "You Are Logged-Out Successfully"
 			render :action => "signout"
+	end
+
+	def contact
+		
+	end
+
+	def current_Users
+		
+	end
+
+	def user_Roles
+		
+	end
+
+	def gadget_Inventory
+		
 	end
 end
