@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :testusers
+
   #root to: 'user#newuser_registration'
   
   root to: 'user#signin'

@@ -1,0 +1,29 @@
+<h1>Listing testusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testusers.each do |testuser| %>
+      <tr>
+        <td><%= testuser.name %></td>
+        <td><%= testuser.email %></td>
+        <td><%= testuser.password %></td>
+        <td><%= link_to 'Show', testuser %></td>
+        <td><%= link_to 'Edit', edit_testuser_path(testuser) %></td>
+        <td><%= link_to 'Destroy', testuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testuser', new_testuser_path %>
