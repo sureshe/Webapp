@@ -4,20 +4,31 @@ Rails.application.routes.draw do
 
   #root to: 'user#newuser_registration'
   
-  root to: 'user#signin'
+  root to: 'projects#signin'
 
-    get "user/new_user"
-    post "user/new_user"
-    post "user/newuser"
-    get "user/signin"
-    post 'user/loggedin'
-    get 'user/loggedin'
-    get 'user/signout'
-    delete 'user/signout'
-    get 'user/contact'
-    get 'user/current_Users'
-    get 'user/user_Roles'
-    get 'user/gadget_Inventory'
+  get "user/new_user"
+  post "user/new_user"
+  post "user/newuser"
+  get "user/signin"
+  post 'user/loggedin'
+  get 'user/loggedin'
+  get 'user/signout'
+  delete 'user/signout'
+  get 'user/contact'
+  get 'user/current_Users'
+  get 'user/user_Roles'
+  get 'user/gadget_Inventory'
+
+  get "projects/new_user"
+  post "projects/new_user"
+  post "projects/newuser"
+  get "projects/signin"
+  post 'projects/loggedin'
+  get 'projects/signout'
+  get 'projects/contact'
+  get 'projects/current_Users'
+  get 'projects/user_Roles'
+  get 'projects/gadget_Inventory'
 
   #match ':controller(/:action(/:id))',:via => [:get, :post]
   #resources :user
