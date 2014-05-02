@@ -4,19 +4,23 @@ Rails.application.routes.draw do
   
   root to: 'user#signin'
 
-  get "user/new_user"
-  post "user/new_user"
-  post "user/newuser"
-  get "user/signin"
-  post 'user/loggedin'
-  get 'user/signout'
-  get 'user/contact'
-  get 'user/current_Users'
-  get 'user/user_Roles'
-  get 'user/gadget_Inventory'
+    get "user/new_user"
+    post "user/new_user"
+    post "user/newuser"
+    get "user/signin"
+    post 'user/loggedin'
+    get 'user/loggedin'
+    get 'user/signout'
+    delete 'user/signout'
+    get 'user/contact'
+    get 'user/current_Users'
+    get 'user/user_Roles'
+    get 'user/gadget_Inventory'
 
-
- # post 'user_login_form'
+  #match ':controller(/:action(/:id))',:via => [:get, :post]
+  #resources :user
+  
+  # post 'user_login_form'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

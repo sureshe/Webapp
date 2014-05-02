@@ -1,7 +1,6 @@
 class UserController < ApplicationController
-
 	protect_from_forgery
-
+	
 	def signin
 		
 	end
@@ -27,19 +26,19 @@ class UserController < ApplicationController
 	end
 
 	def loggedin
-		@r_email = params[:user][:email]
-		@r_password = params[:user][:password]
+		@r_email = params[:email]
+		@r_password = params[:password]
 
 		@c_email = Webmodel.find_by_email(@r_email)
 		@c_password = Webmodel.find_by_password(@r_password)
 
 		if @c_email.nil? or @c_password.nil?
 			flash[:notice] = "Entered Email-Id/Password is Invalid"
-			redirect_to :action => 'signin'
+			render('signin') 
 		else
 			#redirect_to :action => 'loggedin'
 			flash[:notice] = "Hi, You Are LoggedIn Successfully......!"
-			render :action => 'loggedin'
+			render('display_Users')
 		end
 	end
 
@@ -62,5 +61,9 @@ class UserController < ApplicationController
 
 	def gadget_Inventory
 		
+	end
+
+	def display_Users
+		@list = Webmodel.all
 	end
 end
