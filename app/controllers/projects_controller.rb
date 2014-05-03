@@ -22,18 +22,25 @@ class ProjectsController < ApplicationController
 	end
 
 	def adduser
+
 		@adduser = Testuser.new
-		@adduser.firstname = params[:firstname]
-		@adduser.lastname = params[:lastname]
+		@adduser.first_name = params[:firstname]
+		@adduser.last_name = params[:lastname]
 		@adduser.institution = params[:institution]
 		@adduser.email = params[:emailid]
 		@adduser.password = params[:password]
 		@adduser.role = params[:role]
 
-		if 
-			@adduser.save
-			redirect_to :action => 'show'
+		if 	
+			@adduser.save()
+			redirect_to :action => 'current_Users'
+
 		end
+
+	end
+
+	def addinguser
+		
 	end
 
 	def new_user
@@ -88,5 +95,11 @@ class ProjectsController < ApplicationController
 
 	def addgadget
 		
+	end
+
+	def destroy
+		if Testuser.find(params[:id]).destroy()
+			render :action => 'show'
+		end
 	end
 end

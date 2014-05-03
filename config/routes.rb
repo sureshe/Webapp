@@ -6,35 +6,41 @@ Rails.application.routes.draw do
   
   root to: 'projects#signin'
 
-  get "users/new_user"
-  post "users/new_user"
-  post "users/newuser"
-  get "users/signin"
-  post 'users/loggedin'
-  get 'users/loggedin'
-  get 'users/signout'
-  delete 'users/signout'
-  get 'users/contact'
-  get 'users/current_Users'
-  get 'users/user_Roles'
-  get 'users/gadget_Inventory'
+  match ':controller(/:action(/:id))',:via => [:get, :post, :delete]
 
-  get "projects/new_user"
-  post "projects/new_user"
-  post "projects/newuser"
-  get "projects/signin"
-  post 'projects/loggedin'
-  get 'projects/loggedin'
-  get 'projects/signout'
-  delete 'projects/signout'
-  get 'projects/contact'
-  get 'projects/current_Users'
-  get 'projects/user_Roles'
-  get 'projects/gadget_Inventory'
-  get 'projects/show'
-  get 'projects/adduser'
-  get 'projects/addrole'
-  get 'projects/addgadget'
+  # get "users/new_user"
+  # post "users/new_user"
+  # post "users/newuser"
+  # get "users/signin"
+  # post 'users/loggedin'
+  # get 'users/loggedin'
+  # get 'users/signout'
+  # delete 'users/signout'
+  # get 'users/contact'
+  # get 'users/current_Users'
+  # get 'users/user_Roles'
+  # get 'users/gadget_Inventory'
+
+  # get "projects/new_user"
+  # post "projects/new_user"
+  # post "projects/newuser"
+  # get "projects/signin"
+  # post 'projects/loggedin'
+  # get 'projects/loggedin'
+  # get 'projects/signout'
+  # delete 'projects/signout'
+  # get 'projects/contact'
+  # get 'projects/current_Users'
+  # get 'projects/user_Roles'
+  # get 'projects/gadget_Inventory'
+  # get 'projects/show'
+  # get 'projects/adduser'
+  # post 'projects/adduser'
+  # get 'projects/addinguser'
+  # get 'projects/addrole'
+  # get 'projects/addgadget'
+  # get 'projects/delete'
+
 
   #match ':controller(/:action(/:id))',:via => [:get, :post]
   #resources :user

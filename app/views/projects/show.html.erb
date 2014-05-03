@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-md-2 sidebar-padding">
           <div class="list-group">
-            <a href="/projects/current_Users" class="list-group-item active">Current Users</a>
+            <a href="/projects/show" class="list-group-item active">Current Users</a>
             <a href="/projects/user_Roles" class="list-group-item">User Roles</a>
             <a href="/projects/gadget_Inventory" class="list-group-item">Gadget Inventory</a>
           </div>
@@ -41,7 +41,7 @@
                   <p class="lead"> Listing users </p>
                 </div>
                   <div class="col-md-2">
-                    <a href="/projects/adduser" class="btn btn-primary">Add User</a>
+                    <a href="/projects/addinguser" class="btn btn-primary">Add User</a>
                   </div>
                 </div>
 
@@ -67,9 +67,9 @@
                     <td><%=allusers.institution%></td>
                     <td><%=allusers.role%></td>
                     <td></td>
-                    <td><a href="/users_admin/39">Show</a></td>
-                    <td><a href="/users_admin/39/edit">Edit</a></td>
-                    <td><a href="/users_admin/39" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+                    <td><a href="/projects/39">Show</a></td>
+                    <td><a href="/projects/39/edit">Edit</a></td>
+                    <td><a href="/projects/delete/<%=allusers.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
                   </tr>
                   <% end %>
               <% end %>
