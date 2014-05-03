@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def newuser
-		@newuser = User.new
+		@newuser = Testuser.new
 
 		@newuser.first_name = params[:firstname]
 		@newuser.last_name = params[:lastname]
@@ -21,16 +21,31 @@ class ProjectsController < ApplicationController
 		end
 	end
 
+	def adduser
+		@adduser = Testuser.new
+		@adduser.firstname = params[:firstname]
+		@adduser.lastname = params[:lastname]
+		@adduser.institution = params[:institution]
+		@adduser.email = params[:emailid]
+		@adduser.password = params[:password]
+		@adduser.role = params[:role]
+
+		if 
+			@adduser.save
+			redirect_to :action => 'show'
+		end
+	end
+
 	def new_user
 		
 	end
 
 	def loggedin
-		@r_email = params[:User][:email]
-		@r_password = params[:User][:password]
+		@r_email = params[:email]
+		@r_password = params[:password]
 
-		@c_email = Users.find_by_email(@r_email)
-		@c_password = Users.find_by_password(@r_password)
+		@c_email = Testuser.find_by_email(@r_email)
+		@c_password = Testuser.find_by_password(@r_password)
 
 		if @c_email.nil? or @c_password.nil?
 			flash[:notice] = "Entered Email-Id/Password is Invalid"
@@ -60,6 +75,18 @@ class ProjectsController < ApplicationController
 	end
 
 	def gadget_Inventory
+		
+	end
+
+	def show
+		@list = Testuser.all
+	end
+
+	def addrole
+		
+	end
+
+	def addgadget
 		
 	end
 end
